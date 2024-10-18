@@ -1,24 +1,32 @@
 package com.thc.hiddensecrets.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.graphics.Color
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.thc.hiddensecrets.R
 
 class ProfileActivity : AppCompatActivity() {
-    lateinit var recyclerView3: RecyclerView
+    private lateinit var recyclerView3: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        recyclerView3 = findViewById(R.id.recyclerView) // Certifique-se de ter um RecyclerView no seu layout
+
+        val bottom = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val bottomHome = bottom.menu.findItem(R.id.navigation_home)
+
+        bottomHome.setOnMenuItemClickListener {
+            val intent: Intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            // Ação para o item "Home"
+            true
+        }
+
+        recyclerView3 = findViewById(R.id.recyclerView3) // Certifique-se de ter um RecyclerView no seu layout
         recyclerView3.layoutManager = LinearLayoutManager(this)
 
         // Exemplo de URLs de imagens

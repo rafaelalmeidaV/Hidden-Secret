@@ -37,16 +37,17 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <ImageView
-            android:id="@+id/imageViewItem"
+            android:id="@+id/imageViewItemProfile"
             android:layout_width="60dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="20dp"
             android:src="@drawable/logo"
-            android:layout_marginLeft="3dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
     </LinearLayout>
 
